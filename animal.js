@@ -1,4 +1,5 @@
 //background
+//The following 3 lines of code was added by courtesy of Garrit Schaap
 function setup() {
   createCanvas(800, 1000);
 }
@@ -12,8 +13,9 @@ let y = 200;
 let width = 200;
 let height = 200;
 
+//The following 2 lines of code + closing } was added by courtesy of Garrit Schaap
 function draw() {
-  background(40, 100, 20);
+  background(60, 60, 60);
 
   //arms
   noStroke();

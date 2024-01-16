@@ -3,27 +3,51 @@
  * created for the Foundations of programming course at the Jönköping University 2024
  */
 
+let colorBlack = color(0, 0, 0);
+let colorWhite = color(255, 255, 255);
+
+let x = 200;
+let y = 200;
+let w = 200;
+let h = 200;
+
 //background
-background(25, 50, 0);
+background(255, 255, 255);
+
+push();
+translate(180, 80);
 
 //head
+stroke(colorBlack);
 strokeWeight(2.5);
 fill(255, 255, 0);
-ellipse(200, 200, 300);
+ellipse(x, y, w + 100);
 
-//mouth and teeth
-fill(255, 255, 255);
-rect(130, 223, 150, 80, 100);
+//mouth
+fill(colorWhite);
+rect(x - 70, y + 20, w - 50, h - 120, 100);
 
-stroke(0, 0, 0);
-line(137, 240, 273, 240);
-line(134, 280, 275, 280);
+//teeth - upper yaw - left to right
+line(x - 40, y + 21, x - 40, y + 40);
+line(x - 2, y + 21, x - 2, y + 40);
+line(x - 2, y + 21, x - 2, y + 40);
+line(x + 40, y + 21, x + 40, y + 40);
+
+line(x - 63, y + 40, x + 73, y + 40);
+
+//teeth - lower yaw - left to right
+line(x - 40, y + 80, x - 40, y + 100);
+line(x - 2, y + 80, x - 2, y + 100);
+line(x - 2, y + 80, x - 2, y + 100);
+line(x + 40, y + 80, x + 40, y + 100);
+
+line(x - 66, y + 80, x + 75, y + 80);
 
 //eyes and pupils
-fill(255, 255, 255);
-ellipse(270, 150, 80);
-ellipse(150, 150, 120);
+fill(colorWhite);
+ellipse(x + 70, y - 50, w - 120);
+ellipse(x - 50, y - 50, w - 80);
 
-fill(0, 0, 0);
-ellipse(250, 150, 20);
-ellipse(170, 150, 40);
+fill(colorBlack);
+ellipse(x + 50, y - 50, w - 180);
+ellipse(x - 80, y - 50, w - 160);
