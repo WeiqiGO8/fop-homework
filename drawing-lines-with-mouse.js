@@ -8,6 +8,7 @@ function draw() {
   stroke(24, 92, 60);
   strokeWeight(4);
   line(lastMouseX, lastMouseY, mouseX, mouseY);
+  line(width - lastMouseX, width - lastMouseY, width - mouseX, width - mouseY);
   lastMouseX = mouseX;
   lastMouseY = mouseY;
 }

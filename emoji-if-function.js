@@ -10,8 +10,9 @@ let emojiColor = color(255, 255, 0);
 let w = 200;
 let h = 200;
 
+background(colorWhite);
+
 function emoji(x, y) {
-  background(colorWhite);
   push();
   translate(180, 80);
 
@@ -52,18 +53,23 @@ function emoji(x, y) {
   pop();
 }
 
-let x = 200;
+let x = 100;
 let y = 200;
 let s = 0.1;
+let currentDirection = 0.1;
 
 function draw() {
-  //   background();
+  clear();
+
   push();
+  emoji(x, y, s);
   translate(x, y - 100);
   pop();
 
-  x = x + 5;
-
-  emoji(100, 150);
-  emoji(200, 400);
+  if (x === 100) {
+    currentDirection = 2;
+  } else if (x === 300) {
+    currentDirection = -4;
+    x += currentDirection;
+  }
 }
