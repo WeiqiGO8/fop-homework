@@ -5,6 +5,7 @@
 
 let colorBlack = color(0, 0, 0);
 let colorWhite = color(255, 255, 255);
+let emojiColor = color(255, 255, 0);
 
 let x = 200;
 let y = 200;
@@ -20,7 +21,7 @@ translate(180, 80);
 //head
 stroke(colorBlack);
 strokeWeight(2.5);
-fill(255, 255, 0);
+fill(emojiColor);
 ellipse(x, y, w + 100);
 
 //mouth
@@ -51,3 +52,4 @@ ellipse(x - 50, y - 50, w - 80);
 fill(colorBlack);
 ellipse(x + 50, y - 50, w - 180);
 ellipse(x - 80, y - 50, w - 160);
+pop();
