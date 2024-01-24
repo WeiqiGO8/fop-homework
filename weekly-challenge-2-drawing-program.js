@@ -1,21 +1,15 @@
 frameRate(60);
-
+// background(255, 255, 255);
+background(0, 0, 0);
 let lastMouseX = 0;
 let lastMouseY = 0;
 let mouseIsActive = false;
 
-//background color of the canvas
-background(0, 0, 0);
-
 function draw() {
   strokeWeight(4);
-  //if the mouse is pressed a line will be created.
-  //the line have a Start point & a End point.
-  //true = you are drawing. False = you are not drawing.
   if (mouseIsPressed) {
     if (mouseIsActive) {
-      //gives the line a color
-      stroke(lastMouseX, 150, lastMouseY);
+      stroke(lastMouseX, 100, lastMouseY);
       line(lastMouseX, lastMouseY, mouseX, mouseY);
     }
 
@@ -25,4 +19,16 @@ function draw() {
   } else {
     mouseIsActive = false;
   }
+}
+
+function mousePressed() {
+  console.log("The mouse was pressed");
+}
+
+function mouseReleased() {
+  console.log("The mouse was released");
+}
+
+function mouseClicked() {
+  console.log("The mouse was clicked");
 }
