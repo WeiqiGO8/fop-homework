@@ -8,6 +8,21 @@ let mouseIsActive = false;
 let brushShape = "line";
 let brushColor = "mouseColoring";
 
+let brushSize = 4;
+
+//change brush size with arrow keys
+function keyPressed() {
+  if (keyIsDown(38)) {
+    console.log("upp-arrow is pressed");
+    brushSize += 4;
+  } else if (keyIsDown(40)) {
+    console.log("down-arrow is pressed");
+    brushSize -= 4;
+  }
+}
+
+function keyReleased() {}
+
 //buttons to change brush color
 function mouseColor(x, y) {
   noStroke();
@@ -151,7 +166,7 @@ function mouseClicked() {
 }
 
 function draw() {
-  strokeWeight(4);
+  strokeWeight(brushSize);
   if (mouseIsPressed) {
     if (mouseIsActive) {
       if (brushColor === "mouseColoring") {
@@ -165,6 +180,7 @@ function draw() {
       } else if (brushColor === "whiteColoring") {
         stroke(255, 255, 255);
       }
+
       if (brushShape === "line") {
         line(lastMouseX, lastMouseY, mouseX, mouseY);
       } else if (brushShape === "square") {
