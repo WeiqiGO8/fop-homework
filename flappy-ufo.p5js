@@ -10,11 +10,6 @@
     "value": "#### Step 0\r\nSet up the canvas"
   },
   {
-    "kind": 1,
-    "language": "markdown",
-    "value": ""
-  },
-  {
     "kind": 2,
     "language": "javascript",
     "value": "function setup() {\r\n  createCanvas(600, 300);\r\n  background(255, 255, 255);\r\n}"
