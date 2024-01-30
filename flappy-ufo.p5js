@@ -1,0 +1,87 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Flappy UFO\r\nWe want to create a flappy bird clone with an UFO that has to avoid obstacles\r\n\r\n## Rules\r\n- UFO can move up and down\r\n- Obstacles move to the left\r\n- UFO falls down to the ground because of gravity\r\n- UFO goes up when pressing the mouse button\r\n- If UFO collides with obstacles or ground, the game is over\r\n\r\n## Order to build\r\n1. Draw the background\r\n2. Draw the UFO\r\n3. Add gravity to the UFO\r\n4. Make the UFO fly\r\n5. Detect collision between ground and UFO.\r\n6. ..."
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 0\r\nSet up the canvas"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": ""
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function setup() {\r\n  createCanvas(600, 300);\r\n  background(255, 255, 255);\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 1\r\n\r\nDraw the background with a green ground..."
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function scenery() {\r\n  push();\r\n  noStroke();\r\n  //draw the sky\r\n  fill(\"lightblue\");\r\n  rect(0, 0, width, height);\r\n\r\n  //draw the ground\r\n  fill(\"green\");\r\n  rect(0, 200, width, height);\r\n  pop();\r\n}\r\n\r\nfunction draw() {\r\n  scenery();\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 2\r\nDraw the UFO, don't forget to add x and y as a parameter, because the UFO needs to move"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function ufo(x, y) {\r\n  push();\r\n  translate(x, y);\r\n\r\n  //saucer\r\n  fill(255, 0, 0);\r\n  ellipse(0, 0, 80, 30);\r\n\r\n  //Glass dome\r\n  fill(255, 255, 255, 100);\r\n  beginShape();\r\n  vertex(-20, 0);\r\n  bezierVertex(-20, 5, 20, 5, 20, 0);\r\n  bezierVertex(20, -40, -20, -40, -20, 0);\r\n  endShape();\r\n  pop();\r\n}\r\n\r\nfunction draw() {\r\n  scenery();\r\n  ufo(100, 100);\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 3\r\nAdd gravity to the UFO by using a variable for the y-position of the UFO and add velocity and acceleration"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let ufoY = 100;\r\nlet velocity = 1;\r\nlet acceleration = 0.1;\r\n\r\nfunction draw() {\r\n  scenery();\r\n  ufo(100, ufoY);\r\n\r\n  ufoY += velocity;\r\n  velocity += acceleration;\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 4\r\nMake the UFO fly by clicking the mouse button"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function draw() {\r\n  scenery();\r\n  ufo(100, ufoY);\r\n\r\n  ufoY += velocity;\r\n  velocity += acceleration;\r\n\r\n  if (mouseIsPressed) {\r\n    velocity -= 0.2;\r\n  }\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 5\r\nDetect the collision between the UFO and the ground. If the UFO collides, the game should stop."
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let gameIsRunning = true;\r\n\r\nfunction draw() {\r\n  scenery();\r\n  ufo(100, ufoY);\r\n\r\n  if(gameIsRunning === true) {\r\n    ufoY += velocity;\r\n    velocity += acceleration;\r\n  \r\n    if (mouseIsPressed) {\r\n      velocity -= 0.2;\r\n    }\r\n\r\n    if(ufoY > 200) {\r\n      gameIsRunning = false;\r\n      console.log(\"game over\");\r\n    }\r\n  }\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 6\r\nAdd an obstacle and move it"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let barnX = 600;\r\n\r\nfunction barn(x, y) {\r\n  push();\r\n  translate(x, y);\r\n  fill(\"brown\");\r\n  rect(0, 0, 100, 60);\r\n  pop();\r\n}\r\n\r\nfunction draw() {\r\n  scenery();\r\n  barn(barnX, 150);\r\n  ufo(100, ufoY);\r\n\r\n\r\n  if(gameIsRunning === true) {\r\n    barnX += -4;\r\n\r\n    if (barnX < -100) {\r\n      barnX = width;\r\n    }\r\n\r\n    ufoY += velocity;\r\n    velocity += acceleration;\r\n  \r\n    if (mouseIsPressed) {\r\n      velocity -= 0.2;\r\n    }\r\n\r\n    if(ufoY > 200) {\r\n      gameIsRunning = false;\r\n      console.log(\"game over\");\r\n    }\r\n  }\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### Step 7\r\nAdd a collision with the barn (and make the barn look more beautiful)"
+  }
+]
