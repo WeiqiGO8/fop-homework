@@ -43,12 +43,17 @@ function obstacle(x, y) {
   push();
   translate(x, y);
 
-  //obstacle 1 - a barn
-  fill(200, 100, 100);
+  //obstacle 1 - a house
+  fill(200, 50, 30);
   rect(0, 0, 100, 60);
-  //obstacle 2
-  //obstacle 3
-  //obstacle 4
+
+  //window
+  fill(255, 255, 255);
+  rect(20, 10, 20, 20);
+
+  //door + handle
+  rect(55, 20, 30, 40);
+  ellipse(60, 40, 5);
   pop();
 }
 
