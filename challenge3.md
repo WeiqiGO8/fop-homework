@@ -1,10 +1,10 @@
-# Challenge 3 - Create an alternative night sky
+# Challenge 3 - Create an alternative night sky --> snow /snowflakes that falls
 
 #### Rules
 
-- particles = snow or rain
+- particles = snow
 
-- snowflakes or raindrops that falls with gravity/velocity
+- snowflakes that falls with gravity/velocity
 
 - When they reach the bottom -- > they should appear at the top again.
 
@@ -14,13 +14,13 @@
 
 1. create variables:
 
-- for the particles in the x, y and alpha,
+- for the snow in the x, y direction and alpha channel,
 - velocity/gravity,
 - acceleration,
 
 2. functions:
 
-- function draw() {} to draw the particles and canvas
+- function draw() {} to draw the snow and canvas
 
 3. for loop:
 
