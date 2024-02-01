@@ -1,3 +1,11 @@
+angleMode(DEGREES);
+let vehicleY = 100;
+let velocity = 2;
+let acceleration = 0.2;
+let vehicleTilting = 35;
+let vehicleCrashed = 180;
+let gameIsRunning = true;
+
 function setup() {
   createCanvas(600, 300);
   background(255, 255, 255);
@@ -24,8 +32,6 @@ function vehicle(x, y) {
   // saucer
   fill(255, 0, 0);
   ellipse(0, 0, 80, 30);
-
-  //character
 
   //Glass dome
   fill(255, 255, 255, 100);
@@ -56,11 +62,6 @@ function obstacle(x, y) {
   ellipse(60, 40, 5);
   pop();
 }
-
-let vehicleY = 100;
-let velocity = 2;
-let acceleration = 0.2;
-let gameIsRunning = true;
 
 function draw() {
   scenary();
