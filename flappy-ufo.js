@@ -69,7 +69,7 @@ function draw() {
   vehicle(100, vehicleY);
 
   if (gameIsRunning === true) {
-    obstacleX += -4;
+    obstacleX += -2;
 
     if (obstacleX < -100) {
       obstacleX = width;
@@ -79,10 +79,10 @@ function draw() {
     velocity += acceleration;
 
     if (mouseIsPressed) {
-      velocity -= 0.4;
+      velocity -= 0.5;
     }
 
-    if (vehicleY > 200) {
+    if (vehicleY > 200 || (vehicleY > 150 && obstacleX < 100)) {
       gameIsRunning = false;
       console.log("game over");
     }
