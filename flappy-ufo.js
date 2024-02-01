@@ -82,7 +82,7 @@ function draw() {
       velocity -= 0.5;
     }
 
-    if (vehicleY > 200 || (vehicleY > 150 && obstacleX < 100)) {
+    if (vehicleY > 200 || (vehicleY > 125 && obstacleX < 100)) {
       gameIsRunning = false;
       console.log("game over");
     }
