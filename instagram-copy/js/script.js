@@ -10,7 +10,7 @@ const post1 = {
   id: 1,
   userId: 1,
   image:
-    "img/instagram-copy/img/Ahamsterinventorexperimentingwithanewsustainableenergysource.webp",
+    "img/Ahamsterinventorexperimentingwithanewsustainableenergysource.webp",
   description: "diving into the future with sustanable enregy for all",
   likes: 12,
   likedByUser: false,
@@ -32,16 +32,16 @@ function createHeaderElement(user) {
 }
 
 function createPostElement(user, post) {
-  const postELement = document.createElement("article");
-  postELement.classList.add("post");
-  postELement.id = post.id;
+  const postElement = document.createElement("article");
+  postElement.classList.add("post");
+  postElement.id = post.id;
 
   const headerElement = createHeaderElement(user);
-  postELement.appendChild(headerElement);
+  postElement.appendChild(headerElement);
 
   const imageElement = document.createElement("img");
   imageElement.src = post.image;
-  postELement.appendChild(imageElement);
+  postElement.appendChild(imageElement);
 
   const infoElement = document.createElement("article");
 
@@ -51,7 +51,7 @@ function createPostElement(user, post) {
   }
 
   const likeButtonElement = document.createElement("button");
-  likeButtonElement.innerHTML = likedText;
+  likeButtonElement.innerText = likedText;
   infoElement.appendChild(likeButtonElement);
 
   const likeTextElement = document.createElement("span");
@@ -62,9 +62,9 @@ function createPostElement(user, post) {
   descriptionElement.innerText = post.description;
   infoElement.appendChild(descriptionElement);
 
-  postELement.appendChild(infoElement);
+  postElement.appendChild(infoElement);
 
-  return postELement;
+  return postElement;
 }
 
 const post = createPostElement(user1, post1);
