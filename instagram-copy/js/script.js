@@ -17,7 +17,7 @@ const post1 = {
 };
 
 function createHeaderElement(user) {
-  const headerElement = document.createElement("div");
+  const headerElement = document.createElement("article");
 
   const imageElement = document.createElement("img");
   imageElement.src = user.profileImage;
