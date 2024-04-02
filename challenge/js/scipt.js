@@ -1,10 +1,10 @@
 // objects
 let portfolioItems = {
-  img: image1,
-  src: img,
-  alt: imagetext,
-  title: hello,
-  description: desc,
+  image: "img",
+  src: "img/rock-1.jpg",
+  alt: "img text",
+  title: "hello",
+  description: "desc",
 };
 
 //arrays
