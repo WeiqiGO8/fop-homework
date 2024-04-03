@@ -1,6 +1,7 @@
 :root {
-  background: #afafaf;
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background: #afafaf;
 }
 
 header {
@@ -9,16 +10,30 @@ header {
   justify-content: space-around;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-.portfolio-container {
+.work-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
 
-.figure-style {
-  background: yellow;
+.content {
+  width: 100%;
+  max-width: 20em;
+}
+
+.project-post {
+  background-color: #a5a5a5;
+  border-bottom: 0.2em solid #000000;
+}
+
+.project-post img {
+  width: 100%;
+}
+
+.project-post a {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.project-post a:hover {
+  text-decoration: overline;
 }
