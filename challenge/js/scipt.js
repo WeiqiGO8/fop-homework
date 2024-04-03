@@ -42,7 +42,6 @@ function createProjectElement(project) {
 }
 
 const projectElement = createProjectElement(project1);
-contentIdElement.appendChild(projectElement);
 
 //The following 4 lines of code was adapted from ChatGPT: https://chat.openai.com/share/7964f237-673a-41ef-a93d-2ed44f753bc1 - 2024-04-03
 contentProjectElement.forEach((project) => {
