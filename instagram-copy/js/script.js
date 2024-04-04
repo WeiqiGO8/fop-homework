@@ -31,6 +31,14 @@ function createHeaderElement(user) {
   return headerElement;
 }
 
+function getHearEmoji(post) {
+  let likedText = "💟";
+  if (post.likedByUser === true) {
+    likedText = "💌";
+  }
+  return likedText;
+}
+
 function createPostElement(user, post) {
   const postElement = document.createElement("article");
   postElement.classList.add("post");
@@ -45,13 +53,24 @@ function createPostElement(user, post) {
 
   const infoElement = document.createElement("article");
 
-  let likedText = "💟";
-  if (post.likedByUser === true) {
-    likedText = "❣️";
-  }
-
   const likeButtonElement = document.createElement("button");
-  likeButtonElement.innerText = likedText;
+
+  likeButtonElement.addEventListener("click", () => {
+    if (post.likedByUser) {
+      post.likedByUser = false;
+      post.likes = post.likes - 1;
+    } else {
+      post.likedByUser = true;
+      post.likes += 1;
+    }
+
+    likeButtonElement.innerText = getHearEmoji(post);
+    likeTextElement.innerText = post.likes + " likes";
+
+    // const updatePostElement = createPostElement(user, post);
+    // contentElement.insertBefore(updatePostElement, postElement);
+    // postElement.remove();
+  });
   infoElement.appendChild(likeButtonElement);
 
   const likeTextElement = document.createElement("span");
@@ -70,8 +89,8 @@ function createPostElement(user, post) {
 const post = createPostElement(user1, post1);
 contentElement.appendChild(post);
 
-post1.likes = 128;
-post1.likedByUser = true;
+// post1.likes = 128;
+// post1.likedByUser = true;
 
-const post2 = createPostElement(user1, post1);
-contentElement.appendChild(post2);
+// const post2 = createPostElement(user1, post1);
+// contentElement.appendChild(post2);
