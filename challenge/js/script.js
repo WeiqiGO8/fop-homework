@@ -37,6 +37,7 @@ function createProjectElement(project) {
   projectaElement.appendChild(projectImgElement);
 
   const projectFigcapTitleElement = document.createElement("figcaption");
+  projectFigcapTitleElement.classList.add("title");
   projectFigcapTitleElement.innerText = project.projectTitle;
 
   const projectFigcapDescElement = document.createElement("figcaption");
