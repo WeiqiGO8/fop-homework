@@ -11,11 +11,43 @@ header {
   justify-content: space-around;
 }
 
+.container {
+  /* the following 3 lines of code was adapted from ChatGPT: https://chat.openai.com/share/50d69700-e8dd-4172-8e73-397cf44a7cfe - 2024-04-04 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 4em 2em 4em;
+  padding: 0 10em;
+}
+
+.intro-container img {
+  width: 100%;
+  max-width: 10em;
+  max-height: 10em;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0 0.6em 0 0;
+}
+
+.intro-container span {
+  /* the following 2 lines of code was adapted from ChatGPT: https://chat.openai.com/share/50d69700-e8dd-4172-8e73-397cf44a7cfe - 2024-04-04 */
+  display: inline-block;
+  width: 20em;
+  margin: 0;
+  padding: 1em 0 0 0.5em;
+}
+
 .work-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   max-width: 90em;
+  justify-content: center;
 }
 
 .project-post {
@@ -24,6 +56,7 @@ header {
 }
 
 .title {
+  padding: 1em 0;
   font-weight: bold;
 }
 
