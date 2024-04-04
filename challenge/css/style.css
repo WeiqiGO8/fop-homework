@@ -13,11 +13,8 @@ header {
 .work-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-}
-
-.content {
   width: 100%;
-  max-width: 20em;
+  max-width: 90em;
 }
 
 .project-post {

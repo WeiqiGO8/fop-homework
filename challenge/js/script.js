@@ -1,18 +1,25 @@
 // objects
-const contentIdElement = document.getElementById("content");
+const workWrapperIdElement = document.getElementById("work-wrapper");
 
-//arrays
-let contentProjectElement = [];
+function displayProjectImages(projects) {
+  workWrapperIdElement.innerText = "";
 
-for (let i = 1; i <= 12; i++) {
-  let project = {
-    id: i,
-    imgSrc: `img/project-${i}.jpg`,
-    imgAlt: `An image of project ${i}`,
-    projectTitle: `project ${i}`,
-    projectDesc: `description of project ${i}`,
-  };
-  contentProjectElement.push(project);
+  for (let project of projects) {
+    const projectElement = createProjectElement(project);
+    workWrapperIdElement.appendChild(projectElement);
+  }
+}
+
+function loadData() {
+  fetch("data.json")
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .then((json) => {
+      console.log(json);
+      displayProjectImages(json.projects);
+    });
 }
 
 function createProjectElement(project) {
@@ -42,8 +49,4 @@ function createProjectElement(project) {
   return projectFigureElement;
 }
 
-//The following 4 lines of code was adapted from ChatGPT: https://chat.openai.com/share/7964f237-673a-41ef-a93d-2ed44f753bc1 - 2024-04-03
-contentProjectElement.forEach((project) => {
-  const projectElement = createProjectElement(project);
-  contentIdElement.appendChild(projectElement);
-});
+loadData();

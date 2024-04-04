@@ -1,20 +1,37 @@
 const contentElement = document.getElementById("content");
 
-const user1 = {
-  id: 1,
-  name: "Gizmo The Inventor",
-  profileImage: "img/GizmoTheInventor.webp",
-};
+// const user1 = {
+//   id: 1,
+//   name: "Gizmo The Inventor",
+//   profileImage: "img/GizmoTheInventor.webp",
+// };
 
-const post1 = {
-  id: 1,
-  userId: 1,
-  image:
-    "img/Ahamsterinventorexperimentingwithanewsustainableenergysource.webp",
-  description: "diving into the future with sustanable enregy for all",
-  likes: 12,
-  likedByUser: false,
-};
+// const post1 = {
+//   id: 1,
+//   userId: 1,
+//   image:
+//     "img/Ahamsterinventorexperimentingwithanewsustainableenergysource.webp",
+//   description: "diving into the future with sustanable enregy for all",
+//   likes: 12,
+//   likedByUser: false,
+// };
+
+function findUserById(users, id) {
+  let selectedUser = users.find((user) => {
+    return user.id === id;
+  });
+  return selectedUser;
+}
+
+function displayPosts(users, posts) {
+  contentElement.innerText = "";
+
+  for (let post of posts) {
+    const user = findUserById(users, post.userId);
+    const postElement = createPostElement(user, post);
+    contentElement.appendChild(postElement);
+  }
+}
 
 function loadData() {
   fetch("data.json")
@@ -24,6 +41,7 @@ function loadData() {
     })
     .then((json) => {
       console.log(json);
+      displayPosts(json.users, json.posts);
     });
 }
 
@@ -98,8 +116,8 @@ function createPostElement(user, post) {
   return postElement;
 }
 
-const post = createPostElement(user1, post1);
-contentElement.appendChild(post);
+// const post = createPostElement(user1, post1);
+// contentElement.appendChild(post);
 
 // post1.likes = 128;
 // post1.likedByUser = true;

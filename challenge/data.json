@@ -1,0 +1,88 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "imgSrc": "img/rock-1.jpg",
+      "imgAlt": "An image of a rock beach",
+      "projectTitle": "Rock beach",
+      "projectDesc": "Picture taken on a rock beach at Gotland"
+    },
+    {
+      "id": 2,
+      "imgSrc": "img/skiing-1.jpg",
+      "imgAlt": "an image of a skiing slope",
+      "projectTitle": "Skiing in Branäs",
+      "projectDesc": "Taken on a skiing resort in Branäs, Sweden"
+    },
+    {
+      "id": 3,
+      "imgSrc": "img/skiing-2.jpg",
+      "imgAlt": "an image of a skiing lift",
+      "projectTitle": "skiing lift",
+      "projectDesc": "Picture taken on a skiing resort in Branäs, Sweden"
+    },
+    {
+      "id": 4,
+      "imgSrc": "img/skiing-3.jpg",
+      "imgAlt": "an image of a skiing resort",
+      "projectTitle": "Skiing in Branäs",
+      "projectDesc": "Taken on a skiing resort in Branäs, Sweden"
+    },
+    {
+      "id": 5,
+      "imgSrc": "img/sky-1.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    },
+    {
+      "id": 6,
+      "imgSrc": "img/sky-2.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    },
+    {
+      "id": 6,
+      "imgSrc": "img/sky-3.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    },
+    {
+      "id": 7,
+      "imgSrc": "img/sky-4.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    },
+    {
+      "id": 8,
+      "imgSrc": "img/sky-5.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    },
+    {
+      "id": 9,
+      "imgSrc": "img/sky-6.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    },
+    {
+      "id": 10,
+      "imgSrc": "img/sky-7.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    },
+    {
+      "id": 11,
+      "imgSrc": "img/sky-8.jpg",
+      "imgAlt": "an image of the sky",
+      "projectTitle": "Sky picture",
+      "projectDesc": "Picture of the sky"
+    }
+  ]
+}
