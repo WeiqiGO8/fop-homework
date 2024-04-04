@@ -16,6 +16,17 @@ const post1 = {
   likedByUser: false,
 };
 
+function loadData() {
+  fetch("data.json")
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .then((json) => {
+      console.log(json);
+    });
+}
+
 function createHeaderElement(user) {
   const headerElement = document.createElement("article");
 
@@ -54,6 +65,7 @@ function createPostElement(user, post) {
   const infoElement = document.createElement("article");
 
   const likeButtonElement = document.createElement("button");
+  likeButtonElement.innerText = getHearEmoji(post);
 
   likeButtonElement.addEventListener("click", () => {
     if (post.likedByUser) {
@@ -94,3 +106,5 @@ contentElement.appendChild(post);
 
 // const post2 = createPostElement(user1, post1);
 // contentElement.appendChild(post2);
+
+loadData();
