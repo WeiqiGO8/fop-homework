@@ -18,6 +18,7 @@ function setup() {
   createCanvas(400, 400);
   frameRate(10);
 }
+window.setup = setup;
 
 function drawGrid() {
   push();
@@ -38,6 +39,7 @@ function draw() {
   snake.update();
   snake.draw();
 }
+window.draw = draw;
 
 function keyPressed() {
   if (keyCode === UP_ARROW) {
@@ -53,3 +55,4 @@ function keyPressed() {
     snake.direction.turnRight();
   }
 }
+window.keyPressed = keyPressed;
